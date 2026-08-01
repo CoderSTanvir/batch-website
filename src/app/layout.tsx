@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import { Inter } from 'next/font/google';
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const inter = Inter({ subsets: ['latin'] });
+
 export const metadata: Metadata = {
-  title: "SWE Batch Site",
-  description: "Batch website — welcome, students, and alumni",
+  title: "Maritime Law Department | Session 2025–2026",
+  description: "Maritime Law 8th Batch — Bangladesh Maritime University",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -14,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-gray-50 text-gray-900 font-sans">
+    <html lang="en" className="h-full antialiased bg-background">
+      <body className={`${inter.className} min-h-full flex flex-col bg-background text-foreground font-sans`}>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
