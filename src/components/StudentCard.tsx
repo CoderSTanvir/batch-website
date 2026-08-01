@@ -25,7 +25,7 @@ export default function StudentCard({ student }: { student: Student }) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.98 }}
         onClick={() => setOpen(true)}
-        className="flex flex-col items-center gap-2 rounded-xl border border-navy-light/40 bg-navy-accent/40 backdrop-blur-sm p-3 text-center hover:border-gold-accent/30 hover:bg-navy-accent/60 transition-all"
+        className="flex flex-col items-center gap-2 rounded-xl border border-navy-light/40 bg-navy-accent/40 backdrop-blur-sm p-3 text-center hover:border-gold-accent/30 hover:bg-navy-accent/60 transition-all h-full min-h-32 w-full"
       >
         {student.photoUrl ? (
           <Image
@@ -33,14 +33,14 @@ export default function StudentCard({ student }: { student: Student }) {
             alt={student.name}
             width={48}
             height={48}
-            className="h-12 w-12 rounded-full object-cover object-top border border-gold-accent/20"
+            className="h-12 w-12 rounded-full object-cover object-top border border-gold-accent/20 flex-shrink-0"
           />
         ) : (
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-xs font-semibold text-gold-accent border border-gold-accent/30">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-xs font-semibold text-gold-accent border border-gold-accent/30 flex-shrink-0">
             {initials(student.name)}
           </div>
         )}
-        <p className="text-xs font-medium text-foreground leading-tight line-clamp-2">
+        <p className="text-xs font-medium text-foreground leading-tight line-clamp-2 break-words">
           {student.name}
         </p>
       </motion.button>

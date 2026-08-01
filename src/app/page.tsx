@@ -37,8 +37,15 @@ export default function Home() {
             <p className="text-text-secondary mb-8">
               Bangladesh Maritime University — 8th Batch
             </p>
-            <div className="mt-8 flex h-40 items-center justify-center rounded-2xl border border-navy-light/40 bg-navy-accent/30 text-sm text-text-tertiary">
-              Group photo goes here
+            <div className="mt-8 rounded-2xl border border-navy-light/40 overflow-hidden bg-navy-accent/30">
+              <Image
+                src="/group-photo.jpg"
+                alt="BMU Maritime Law 8th Batch group photo"
+                width={800}
+                height={500}
+                className="w-full h-auto object-cover max-h-96"
+                priority
+              />
             </div>
           </div>
         </div>
