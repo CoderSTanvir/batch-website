@@ -14,13 +14,13 @@ export default function Footer() {
               Shahriar Tanvir
             </a>
           </p>
-          <p>Bangladesh Maritime University — Maritime Law Department</p>
+          <p>Daffodil International University — Software Engineering Department</p>
           <p>
             <a
-              href="mailto:shahriartanvir285@gmail.com"
+              href="mailto:262-35-351@diu.edu.bd"
               className="text-gold-accent hover:text-gold-accent/80 transition"
             >
-              shahriartanvir285@gmail.com
+              262-35-351@diu.edu.bd
             </a>
           </p>
         </div>

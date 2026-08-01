@@ -33,7 +33,7 @@ export default function StudentCard({ student }: { student: Student }) {
             alt={student.name}
             width={48}
             height={48}
-            className="h-12 w-12 rounded-full object-cover border border-gold-accent/20"
+            className="h-12 w-12 rounded-full object-cover object-top border border-gold-accent/20"
           />
         ) : (
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-xs font-semibold text-gold-accent border border-gold-accent/30">
@@ -74,7 +74,7 @@ export default function StudentCard({ student }: { student: Student }) {
                       alt={student.name}
                       width={56}
                       height={56}
-                      className="h-14 w-14 flex-shrink-0 rounded-full object-cover border-2 border-gold-accent/30"
+                      className="h-14 w-14 flex-shrink-0 rounded-full object-cover object-top border-2 border-gold-accent/30"
                     />
                   ) : (
                     <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-sm font-semibold text-gold-accent border border-gold-accent/30">

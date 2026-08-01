@@ -27,7 +27,7 @@ export default function FeaturedCard({ student }: { student: Student }) {
           alt={student.name}
           width={96}
           height={96}
-          className="mx-auto mb-4 h-24 w-24 rounded-full object-cover object-center border-2 border-gold-accent/30"
+          className="mx-auto mb-4 h-24 w-24 rounded-full object-cover object-top border-2 border-gold-accent/30"
         />
       ) : (
         <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-lg font-semibold text-gold-accent border border-gold-accent/30">
