@@ -1,7 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function DevBanner() {
   return (
-    <div className="mx-6 mt-4 rounded-md bg-amber-50 px-4 py-2 text-sm text-amber-800">
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="mx-auto my-6 max-w-5xl rounded-xl border border-gold-accent/20 bg-gradient-to-r from-gold-accent/10 via-navy-accent/20 to-gold-accent/10 px-4 py-3 text-sm text-gold-accent backdrop-blur-sm"
+    >
       🛠️ This site is still in development — some features and content are placeholders.
-    </div>
+    </motion.div>
   );
 }
