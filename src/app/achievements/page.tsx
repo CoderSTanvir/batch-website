@@ -1,22 +1,25 @@
 import AchievementCard from "@/components/AchievementCard";
-import { achievements } from "@/data/content";
-import { FadeInUp, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
+import { createClient } from "@/lib/supabase/server";
+import type { Achievement } from "@/lib/types";
 
-export default function AchievementsPage() {
+export default async function AchievementsPage() {
+  const supabase = await createClient();
+  const { data: achievements } = await supabase
+    .from("achievements")
+    .select("*")
+    .order("created_at", { ascending: false });
+
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12 lg:py-16">
-      <FadeInUp>
-        <h1 className="mb-2 text-3xl lg:text-4xl font-bold text-foreground">Achievements</h1>
-        <p className="mb-8 text-text-secondary">Milestones and recognitions from the batch.</p>
-      </FadeInUp>
-
-      <StaggerContainer className="grid gap-6 sm:grid-cols-2">
-        {achievements.map((a) => (
-          <StaggerItem key={a.id}>
-            <AchievementCard item={a} />
-          </StaggerItem>
+    <div className="mx-auto max-w-3xl px-6 py-8">
+      <h1 className="mb-1 text-lg font-medium text-foreground">Achievements</h1>
+      <p className="mb-6 text-sm text-text-secondary">
+        Milestones and recognitions from the batch.
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {(achievements as Achievement[] | null)?.map((a) => (
+          <AchievementCard key={a.id} item={a} />
         ))}
-      </StaggerContainer>
+      </div>
     </div>
   );
 }

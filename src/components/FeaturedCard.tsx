@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import type { Student } from "@/data/students";
-import { motion } from "framer-motion";
+import type { Student } from "@/lib/types";
 
 function initials(name: string) {
   return name
@@ -14,42 +11,39 @@ function initials(name: string) {
 }
 
 export default function FeaturedCard({ student }: { student: Student }) {
-  const hasAcademicInfo = student.department || student.program || student.studentId;
+  const hasAcademicInfo = student.department || student.program || student.student_id;
 
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      className="flex-1 rounded-2xl border border-navy-light/40 bg-navy-accent/60 p-6 text-center backdrop-blur-sm hover:border-gold-accent/20 transition-all"
-    >
-      {student.photoUrl ? (
+    <div className="flex-1 rounded-xl border border-navy-light/40 bg-navy-accent/60 p-5 text-center">
+      {student.photo_url ? (
         <Image
-          src={student.photoUrl}
+          src={student.photo_url}
           alt={student.name}
-          width={96}
-          height={96}
-          className="mx-auto mb-4 h-24 w-24 rounded-full object-cover object-top border-2 border-gold-accent/30"
+          width={72}
+          height={72}
+          className="mx-auto mb-3 h-[72px] w-[72px] rounded-full object-cover object-[center_32%]"
         />
       ) : (
-        <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-gold-accent/20 to-navy-light text-lg font-semibold text-gold-accent border border-gold-accent/30">
+        <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-gold-accent/20 text-base font-medium text-gold-accent">
           {initials(student.name)}
         </div>
       )}
-      <p className="font-semibold text-foreground text-lg">{student.name}</p>
+      <p className="font-medium text-foreground">{student.name}</p>
       <p className="text-sm text-text-secondary">{student.role}</p>
 
-      <div className="mt-4 space-y-1 text-xs text-text-tertiary">
-        <p>📞 {student.phone}</p>
-        <p>✉️ {student.email}</p>
+      <div className="mt-3 space-y-1 text-xs text-text-tertiary">
+        {student.phone && <p>📞 {student.phone}</p>}
+        {student.email && <p>✉️ {student.email}</p>}
       </div>
 
       {hasAcademicInfo && (
-        <div className="mt-4 space-y-0.5 border-t border-navy-light/40 pt-4 text-left text-xs text-text-tertiary">
+        <div className="mt-3 space-y-0.5 border-t border-navy-light/40 pt-3 text-left text-xs text-text-tertiary">
           {student.department && <p>{student.department}</p>}
           {student.program && <p>{student.program}</p>}
           {student.session && <p>Session: {student.session}</p>}
-          {student.studentId && <p>ID: {student.studentId}</p>}
+          {student.student_id && <p>ID: {student.student_id}</p>}
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
