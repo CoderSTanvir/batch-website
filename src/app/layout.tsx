@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Maritime Law Department | Session 2025–2026",
+  title: "BMU Law Batch — Maritime Law 8th Batch",
   description: "Maritime Law 8th Batch — Bangladesh Maritime University",
   viewport: {
     width: "device-width",
