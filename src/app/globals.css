@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium Law Department Color Palette */
-  --background: #0B0F19;
-  --foreground: #ffffff;
-  --text-secondary: #b8c5d6;
-  --text-tertiary: #8b96a8;
-  --navy-accent: #1a2540;
-  --navy-light: #2d3a52;
+  /* Maritime Nebula Color Palette */
+  --background: #0a0f1f;
+  --foreground: #f5f7fb;
+  --text-secondary: #c5d0e0;
+  --text-tertiary: #8b95a8;
+  --navy-accent: #162d4a;
+  --navy-light: #1f3a54;
   --gold-accent: #d4af37;
-  --border-color: #2d3a52;
-  --card-bg: #131b2e;
+  --border-color: #1f3a54;
+  --card-bg: #0f1829;
+  --nebula-glow: #1a5f7a;
 }
 
 @theme inline {
@@ -21,9 +22,29 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #0a0f1f 0%, #0f1829 50%, #0d1424 100%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 20% 30%, rgba(26, 95, 122, 0.08) 0%, transparent 40%),
+              radial-gradient(ellipse at 80% 70%, rgba(26, 95, 122, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main, .mx-auto {
+  position: relative;
+  z-index: 1;
 }
 
 /* Typography */
@@ -74,6 +95,23 @@ body {
 ::selection {
   background-color: var(--gold-accent);
   color: var(--background);
+}
+
+/* Glow effect for cards and sections */
+.glow-card {
+  position: relative;
+  background: var(--card-bg);
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(26, 95, 122, 0.1) 0%, transparent 60%);
+}
+
+.glow-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(26, 95, 122, 0.02) 0%, transparent 100%);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 /* Admin form utility classes */

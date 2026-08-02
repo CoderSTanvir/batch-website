@@ -21,7 +21,7 @@ export default function JournalCard({ entry }: { entry: Journal }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="w-full rounded-xl border border-navy-light/40 bg-navy-accent/85 p-4 text-left hover:border-gold-accent/50 transition"
+        className="w-full rounded-xl border border-navy-light/40 bg-navy-accent/85 p-4 text-left hover:border-gold-accent/50 transition glow-card"
       >
         <div className="flex items-start gap-3">
           {entry.author_photo_url ? (
@@ -58,7 +58,7 @@ export default function JournalCard({ entry }: { entry: Journal }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-md rounded-xl border border-navy-light/40 bg-navy-accent p-5 shadow-lg max-h-[85vh] overflow-y-auto"
+            className="w-full max-w-md rounded-xl border border-navy-light/40 bg-navy-accent p-5 shadow-lg max-h-[85vh] overflow-y-auto glow-card"
           >
             <div className="flex items-start gap-3">
               {entry.author_photo_url ? (

@@ -14,7 +14,7 @@ export default function FeaturedCard({ student }: { student: Student }) {
   const hasAcademicInfo = student.department || student.program || student.student_id;
 
   return (
-    <div className="flex-1 rounded-xl border border-navy-light/40 bg-navy-accent/85 p-5 text-center">
+    <div className="flex-1 rounded-xl border border-navy-light/40 bg-navy-accent/85 p-5 text-center glow-card">
       {student.photo_url ? (
         <Image
           src={student.photo_url}

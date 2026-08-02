@@ -22,7 +22,7 @@ export default function StudentCard({ student }: { student: Student }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex flex-col items-center gap-2 rounded-lg border border-navy-light/40 bg-navy-accent/85 p-3 text-center hover:border-gold-accent/50 transition"
+        className="flex flex-col items-center gap-2 rounded-lg border border-navy-light/40 bg-navy-accent/85 p-3 text-center hover:border-gold-accent/50 transition glow-card"
       >
         {student.photo_url ? (
           <Image
@@ -49,7 +49,7 @@ export default function StudentCard({ student }: { student: Student }) {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-sm rounded-xl border border-navy-light/40 bg-navy-accent p-5 shadow-lg max-h-[85vh] overflow-y-auto"
+            className="w-full max-w-sm rounded-xl border border-navy-light/40 bg-navy-accent p-5 shadow-lg max-h-[85vh] overflow-y-auto glow-card"
           >
             <div className="flex items-start gap-3">
               {student.photo_url ? (

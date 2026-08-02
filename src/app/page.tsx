@@ -29,7 +29,7 @@ export default async function Home() {
     <div className="mx-auto max-w-3xl px-6 py-8">
       {/* Hero */}
       <FadeInUp>
-        <section className="rounded-xl border border-navy-light/40 bg-navy-accent/85 p-8 text-center">
+        <section className="rounded-xl border border-navy-light/40 bg-navy-accent/85 p-8 text-center glow-card">
           <Image
             src="/logo.jpeg"
             alt="Batch logo"

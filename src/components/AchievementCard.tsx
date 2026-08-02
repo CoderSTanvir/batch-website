@@ -2,7 +2,7 @@ import type { Achievement } from "@/lib/types";
 
 export default function AchievementCard({ item }: { item: Achievement }) {
   return (
-    <div className="rounded-xl border border-navy-light/40 bg-navy-accent/85 p-4">
+    <div className="rounded-xl border border-navy-light/40 bg-navy-accent/85 p-4 glow-card">
       {item.date && <p className="text-xs font-medium text-gold-accent">🏆 {item.date}</p>}
       <p className="mt-1 font-medium text-foreground">{item.title}</p>
       {item.description && (
