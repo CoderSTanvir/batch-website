@@ -4,8 +4,28 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "BMU Law Batch - Maritime Law 8th Batch",
-  description: "Maritime Law 8th Batch - Bangladesh Maritime University",
+  title: "BMU Maritime Law, Session: 2025-2026",
+  description: "Maritime Law 8th Batch — Bangladesh Maritime University",
+  openGraph: {
+    title: "BMU Maritime Law, Session: 2025-2026",
+    description: "Maritime Law 8th Batch — Bangladesh Maritime University",
+    images: [
+      {
+        url: "/logo.jpeg",
+        width: 1080,
+        height: 1080,
+        alt: "Maritime Law Batch Logo",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BMU Maritime Law, Session: 2025-2026",
+    description: "Maritime Law 8th Batch — Bangladesh Maritime University",
+    images: ["/logo.jpeg"],
+  },
 };
 
 export const viewport: Viewport = {
