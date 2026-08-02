@@ -29,13 +29,12 @@ export default function Loading() {
         <div className="relative w-16 h-16">
           {/* Outer rotating circle */}
           <svg
-            className="w-full h-full animate-spin"
+            className="w-full h-full animate-spin text-gold-accent"
             style={{ animationDuration: '3s' }}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
-            className="text-gold-accent"
           >
             <circle cx="12" cy="12" r="10" />
             {/* Ship wheel spokes */}
