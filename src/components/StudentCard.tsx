@@ -22,7 +22,7 @@ export default function StudentCard({ student }: { student: Student }) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="flex flex-col items-center gap-2 rounded-lg border border-navy-light/40 bg-navy-accent/60 p-3 text-center hover:border-gold-accent/50 transition"
+        className="flex flex-col items-center gap-2 rounded-lg border border-navy-light/40 bg-navy-accent/85 p-3 text-center hover:border-gold-accent/50 transition"
       >
         {student.photo_url ? (
           <Image
